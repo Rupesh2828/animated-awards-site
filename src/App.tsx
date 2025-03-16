@@ -1,11 +1,24 @@
+import { useState } from "react"
 import Hero from "./components/Hero"
-
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query"
 
 const App = () => {
+
+  const [demo, setDemo] = useState(true)
+
+  const queryClient = new QueryClient({
+    defaultOptions:{
+      queries:{
+        refetchOnWindowFocus:false
+      }
+    }
+  })
+
   return (
-  <main className="relative min-h-screen w-screen overflow-x-hidden">
-    <Hero/>
-  </main>
+  <QueryClientProvider client ={queryClient}>
+    <button onClick={() => setDemo(!demo)} >Toggle Demo</button>
+   {demo && <Hero/>}
+  </QueryClientProvider>
   )
 }
 
