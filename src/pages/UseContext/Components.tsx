@@ -1,9 +1,9 @@
-import { useContext } from "react";
 import { useUserContext } from "./context";
 
 interface SidebarProps{
 }
 
+//below are the consumer functions of usecontext of provider.
 
 export function SideBar({}:SidebarProps){
 

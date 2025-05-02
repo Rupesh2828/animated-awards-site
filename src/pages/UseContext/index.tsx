@@ -17,6 +17,7 @@ export default function demo({}: DemoProps) {
 
   return (
     <div>
+      {/* we created provider here in this */}
       <DashBoardContext.Provider value={user}>
         <DashBoard />
       </DashBoardContext.Provider>

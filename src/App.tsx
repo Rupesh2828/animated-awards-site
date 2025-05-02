@@ -4,6 +4,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import PersitentCount from "./components/PersitentCount";
 import SideEffect from "./components/use-effect"
 import MemoProps from "./hooks/use-memo"
+import KeysndValues from "./pages/draft/index"
 
 const App = () => {
   const [demo, setDemo] = useState(true);
@@ -23,8 +24,9 @@ const App = () => {
       <button onClick={() => setDemo(!demo)}>Toggle Demo</button>
       {demo && <Hero />}
       <PersitentCount />
+      <KeysndValues></KeysndValues>
       {/* <SideEffect/> */}
-      <MemoProps/>
+      {/* <MemoProps/> */}
     </QueryClientProvider>
   );
 };
